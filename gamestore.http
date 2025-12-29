@@ -1,0 +1,16 @@
+GET http://localhost:5035/games
+
+###
+GET http://localhost:5035/games/c2a1fc2c-bbe6-47ca-a4c3-5aa1050b1faf
+
+### 
+POST http://localhost:5035/games
+Content-Type: application/json
+
+{
+    "name": "New Game",
+    "genre": "Adventure",
+    "price": 39.99,
+    "releaseDate": "2024-01-15"
+}
+

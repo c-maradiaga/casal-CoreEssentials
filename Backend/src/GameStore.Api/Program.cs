@@ -31,6 +31,31 @@ List<Game> games = new()
     }
 };
 
-app.MapGet("/", () => "Hello World!");
+const string GetGameEnpointName = "GetName";
+
+
+app.MapGet("/games", () => games);
+
+
+app.MapGet("/games/{id}", (Guid id) =>
+{
+    var game = games.FirstOrDefault(g => g.Id == id);
+    return game is not null ? Results.Ok(game) : Results.NotFound();
+}).WithName(GetGameEnpointName) ;
+
+// POST 
+app.MapPost("/games", (Game newGame) =>
+{
+    // if(string.IsNullOrWhiteSpace(newGame.Name))
+    //     return Results.BadRequest("El nombre del Juego no puede estar vacio.");
+   
+    newGame.Id = Guid.NewGuid();
+    games.Add(newGame);
+    //return Results.Created($"/games/{newGame.Id}", newGame);
+
+    return Results.CreatedAtRoute(GetGameEnpointName, new { id = newGame.Id }, newGame); 
+});
+
+
 
 app.Run();
