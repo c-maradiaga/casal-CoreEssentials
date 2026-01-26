@@ -8,9 +8,20 @@ POST http://localhost:5035/games
 Content-Type: application/json
 
 {
-    "name": "New Game",
-    "genre": "Adventure",
-    "price": 39.99,
+    "name": "",
+    "genre": "AdventureAdventureAdventureAdventureAdventureAdventure",
+    "price": -39.99,
     "releaseDate": "2024-01-15"
+}
+ 
+ ### 
+ PUT http://localhost:5035/games/c2a1fc2c-bbe6-47ca-a4c3-5aa1050b1faf
+Content-Type: application/json
+
+{
+    "name": "Updated Game Name",
+    "genre": "Action",
+    "price": 49.99,
+    "releaseDate": "2024-02-20"
 }
 

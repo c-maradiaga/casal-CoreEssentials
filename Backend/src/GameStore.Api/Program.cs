@@ -1,9 +1,10 @@
+using System.Collections.Concurrent;
 using GameStore.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-List<Game> games = new()
+ConcurrentBag<Game> games = new()
 {
     new Game
     {
@@ -54,7 +55,25 @@ app.MapPost("/games", (Game newGame) =>
     //return Results.Created($"/games/{newGame.Id}", newGame);
 
     return Results.CreatedAtRoute(GetGameEnpointName, new { id = newGame.Id }, newGame); 
-});
+}).WithParameterValidation();
+
+
+// PUT /games/21565-1516
+app.MapPut("/games/{id}", (Guid id, Game updatedGame) =>
+{
+    var existingGame = games.FirstOrDefault(g => g.Id == id);
+
+    if (existingGame is null) 
+        return Results.NotFound();
+
+    existingGame.Name = updatedGame.Name;
+    existingGame.Genre = updatedGame.Genre;
+    existingGame.Price = updatedGame.Price;
+    
+    existingGame.ReleaseDate = updatedGame.ReleaseDate;
+
+    return Results.NoContent();
+}).WithParameterValidation();
 
 
 
