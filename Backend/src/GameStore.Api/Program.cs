@@ -4,7 +4,7 @@ using GameStore.Api.Models;
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-ConcurrentBag<Game> games = new()
+List<Game> games = new()
 {
     new Game
     {
@@ -74,6 +74,14 @@ app.MapPut("/games/{id}", (Guid id, Game updatedGame) =>
 
     return Results.NoContent();
 }).WithParameterValidation();
+
+
+app.MapDelete("/games/{id}", (Guid id) =>
+{
+    games.RemoveAll(game => game.Id == id);
+    
+    return Results.NoContent();
+});
 
 
 

@@ -3,6 +3,10 @@ Proyecto .NET tipo Web API con .NET 8 del curso de Julio Casal
 
 ### 7 Adding Serverside Validtaion
 
+Nota: Asegurarse que REST Client este instalada, y habilitada en este Workspace
+para que los endpoint del archivo gamestore.http se puedan ejecutar desde ahi, es decir que 
+aparezca encima de cada endpoint la opcion "Send"
+
 * Las MinimalAPIS no aplican diretamente todo lo que es DataAnnotation. Para forzar las validaciones de DataAnnotation
   en MinimalAPI se una un Endpoint Filter, que se usa para ejecutar algo comportamiento ya sea antes o despues
   del request. Para esto se instalo la librearia "MinimalApis.Extensions - helpers for working with ASP.NET Core Minimal APIs."
