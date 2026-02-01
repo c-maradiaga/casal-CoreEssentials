@@ -10,7 +10,5 @@ Proyecto .NET tipo Web API con .NET 8 del curso de Julio Casal
   2. En el endpoint que se debe validar, es decir donde se desea aplicar el filtro, se debe agregar el siguiente codigo:
     "}).WithParameterValidation();"
 
-Para la lista originall Lis<Game> se cambio a ConcurrentBag<Game>  para evitar conflictos de cocurrencia cuanddo la aplicacióon
+Para la lista originall Lis<Game> se cambio a ConcurrentBag<Game>  para evitar conflictos de cocurrencia cuando la aplicacióon
 se ejecuta varias veces en un mismo momento.
-
-
