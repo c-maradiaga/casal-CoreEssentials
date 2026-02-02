@@ -33,4 +33,13 @@ This immutability is perfect for DTOs as they are meant to carry data from one p
 for modification, ensuring data consistency and integrity as it moves across different layers of an application or between applications.
 
 ** VERTICAL ARCHITECTURE: **
+Al definir public IEnumerable<Game> GetGames() => games;  como IEnumerable en lugar de List es porque IEnumerable
+unicamente permite iterar sobre la colección, mientras que con List se permite agregar o eliminar elementos, lo cual
+no se desea cuando se retorna la data al cliente.
+
+IEnumerable<Game> GetGames() => games  es equivalent a tener:
+public IEnumerable<Game> GetGames()
+{
+    return games;
+}
 
