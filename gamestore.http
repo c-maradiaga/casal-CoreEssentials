@@ -8,10 +8,11 @@ POST http://localhost:5035/games
 Content-Type: application/json
 
 {
-    "name": "",
-    "genre": "AdventureAdventureAdventureAdventureAdventureAdventure",
-    "price": -39.99,
-    "releaseDate": "2024-01-15"
+    "name": "MineCraft",
+    "genre": "",
+    "price": 39.99,
+    "releaseDate": "2024-01-15",
+    "description": "La descripcion"
 }
  
  ### 

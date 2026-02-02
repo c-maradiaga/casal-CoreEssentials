@@ -1,10 +1,11 @@
 ## casal-CoreEssentials
+
 Proyecto .NET tipo Web API con .NET 8 del curso de Julio Casal
 
 ### 7 Adding Serverside Validtaion
 
 Nota: Asegurarse que REST Client este instalada, y habilitada en este Workspace
-para que los endpoint del archivo gamestore.http se puedan ejecutar desde ahi, es decir que 
+para que los endpoint del archivo gamestore.http se puedan ejecutar desde ahi, es decir que
 aparezca encima de cada endpoint la opcion "Send"
 
 * Las MinimalAPIS no aplican diretamente todo lo que es DataAnnotation. Para forzar las validaciones de DataAnnotation
