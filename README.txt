@@ -32,4 +32,5 @@ usually at the time of creation, they cannot be changed.
 This immutability is perfect for DTOs as they are meant to carry data from one point to another without the need 
 for modification, ensuring data consistency and integrity as it moves across different layers of an application or between applications.
 
-VERTICAL ARCHITECTURE:
+** VERTICAL ARCHITECTURE: **
+
