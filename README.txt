@@ -43,3 +43,21 @@ public IEnumerable<Game> GetGames()
     return games;
 }
 
+### Introducction to Vertical Architecture:
+Prestation Layer, Business Layer, Data Access Layer, Database Layer.
+
+Slice: Codebase is deivden int oindependent feature (slices)
+Each slice conains evertything neeeded for a specific feature.
+
+Vertical Architecture: 
+    - Each slice is a feature.
+    - Each slice is independent of the others.
+
+Structuring a slice:
+INPUT LAYER: (CreateGameDto) ----> Handler (CreateGameEndpoint) ---> OUTPUT LAYER (CreateGameResultDto)
+
+
+    
+
+
+

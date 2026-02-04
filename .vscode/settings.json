@@ -1,3 +1,18 @@
 {
-    "markdown.validate.enabled": false
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#000000",
+    "tab.inactiveBackground": "#000000",
+    "tab.activeForeground": "#ffffff",
+    "tab.inactiveForeground": "#bfbfbf",
+    "tab.border": "#000000",
+    "editor.background": "#000000"
+  }
+}{
+  "markdown.validate.enabled": false,
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#000000",
+    "tab.inactiveBackground": "#000000",
+    "tab.activeForeground": "#000000",
+    "tab.inactiveForeground": "#000000"
+  }
 }

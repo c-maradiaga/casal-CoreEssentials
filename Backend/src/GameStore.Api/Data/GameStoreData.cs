@@ -66,7 +66,5 @@ public class GameStoreData
         games.RemoveAll(game => game.Id == id);
     }
 
-
-
 }
 

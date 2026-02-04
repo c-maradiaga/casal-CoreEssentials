@@ -1,5 +1,9 @@
 using System.Collections.Concurrent;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
+using GameStore.Api.Data;
+using GameStore.Api.Features.Games;
+using GameStore.Api.Features.Games.GetGames;
 using GameStore.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,25 +11,30 @@ var app = builder.Build();
 
 const string GetGameEndpointName = "GetGame";
 
-
-
 const string GetGameEnpointName = "GetName";
 
+GameStoreData data = new GameStoreData();
 
-app.MapGet("/games", () => games);
+app.MapGetGames(data);
 
 
 app.MapGet("/games/{id}", (Guid id) =>
 {
-    var game = games.FirstOrDefault(g => g.Id == id);
-    return game is not null ? Results.Ok(game) : Results.NotFound();
-}).WithName(GetGameEnpointName);
+    Game? game = data.GetGame(id);
+
+    return game is null ? Results.NotFound() : Results.Ok(new GameDetailsDto(game.Id,
+                                                                             game.Name,
+                                                                             game.Genre.Id,
+                                                                             game.Price,
+                                                                             game.ReleaseDate,
+                                                                             game.Description));
+}
+).WithName(GetGameEnpointName);
 
 // POST 
 app.MapPost("/games", (CreateGameDto gameDto) =>
 {
-    var genre = genres.Find(genre => genre.Id == gameDto.GenreId);
-
+    var genre = data.GetGenre(gameDto.GenreId);
     if (genre is null)
     {
         return Results.BadRequest("Invalid Genre id");
@@ -41,7 +50,7 @@ app.MapPost("/games", (CreateGameDto gameDto) =>
         Description = gameDto.Description
     };
 
-    games.Add(game);
+    data.AddGame(game);
 
     return Results.CreatedAtRoute(
         GetGameEndpointName,
@@ -59,7 +68,7 @@ app.MapPost("/games", (CreateGameDto gameDto) =>
 
 app.MapDelete("/games/{id}", (Guid id) =>
 {
-    games.RemoveAll(game => game.Id == id);
+    data.RemoveGame(id);
 
     return Results.NoContent();
 });
@@ -67,13 +76,12 @@ app.MapDelete("/games/{id}", (Guid id) =>
 // PUT /games/122233-434d-43434....
 app.MapPut("/games/{id}", (Guid id, UpdateGameDto gameDto) =>
 {
-    var existingGame = games.Find(game => game.Id == id);
+    var existingGame = data.GetGame(id);
 
     if (existingGame is null)
         return Results.NotFound();
 
-
-    var genre = genres.Find(genre => genre.Id == gameDto.GenreId);
+    var genre = data.GetGenre(gameDto.GenreId);
 
     if (genre is null)
         return Results.BadRequest("Invalid Genre id");
@@ -88,7 +96,8 @@ app.MapPut("/games/{id}", (Guid id, UpdateGameDto gameDto) =>
 })
 .WithParameterValidation();
 
-
+// Get/genres
+app.MapGet("/genres", () => data.GetGenres().Select(genre => new GenreDto(genre.Id, genre.Name)));
 
 app.Run();
 
@@ -100,13 +109,7 @@ public record GameDetailsDto(
     DateOnly ReleaseDate,
     string Description);
 
-public record GameSummaryDto(
-    Guid Id,
-    string Name,
-    string Genre,
-    decimal Price,
-    DateOnly ReleaseDate
-);
+
 
 public record CreateGameDto(
     [Required][StringLength(50)] string Name,
@@ -123,3 +126,5 @@ public record UpdateGameDto(
     DateOnly ReleaseDate,
     [Required][StringLength(500)] string Description
 );
+
+public record GenreDto(Guid Id, string Name);

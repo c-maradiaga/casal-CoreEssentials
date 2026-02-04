@@ -1,7 +1,7 @@
 GET http://localhost:5035/games
 
 ###
-GET http://localhost:5035/games/c2a1fc2c-bbe6-47ca-a4c3-5aa1050b1faf
+GET http://localhost:5035/games/cedc710e-eca1-495b-a791-718bb8dbcd5c
 
 ### 
 POST http://localhost:5035/games
@@ -14,9 +14,9 @@ Content-Type: application/json
     "releaseDate": "2024-01-15",
     "description": "La descripcion"
 }
- 
- ### 
- PUT http://localhost:5035/games/c2a1fc2c-bbe6-47ca-a4c3-5aa1050b1faf
+
+### 
+PUT http://localhost:5035/games/c2a1fc2c-bbe6-47ca-a4c3-5aa1050b1faf
 Content-Type: application/json
 
 {

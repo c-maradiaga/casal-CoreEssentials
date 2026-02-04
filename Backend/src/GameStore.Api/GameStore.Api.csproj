@@ -10,6 +10,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="Features\" />
+    <Folder Include="Features\Games\" />
+    <Folder Include="Features\Games\GetGames\" />
   </ItemGroup>
 
 </Project>
