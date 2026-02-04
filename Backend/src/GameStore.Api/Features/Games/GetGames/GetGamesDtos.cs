@@ -7,3 +7,11 @@ public record GameSummaryDto(
     decimal Price,
     DateOnly ReleaseDate
 );
+
+public record GameDetailsDto(
+    Guid Id,
+    string Name,
+    Guid GenreId,
+    decimal Price,
+    DateOnly ReleaseDate,
+    string Description);
