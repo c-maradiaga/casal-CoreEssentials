@@ -1,7 +1,7 @@
 GET http://localhost:5035/games
 
 ###
-GET http://localhost:5035/games/e8cb45e6-29c2-4afb-9c67-afc029dae09c
+GET http://localhost:5035/games/0b4a6e72-8adb-42ff-a3f4-e35b55a1e096
 
 ###
 POST http://localhost:5035/games
@@ -16,13 +16,13 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5035/games/a90f3bca-cb9f-486f-8b44-75e4df7bb03d
+PUT http://localhost:5035/games/0b4a6e72-8adb-42ff-a3f4-e35b55a1e096
 Content-Type: application/json
 
 {
     "name": "Stree Fighter II Turbo",
     "genreId": "4e179397-c3f1-45ec-a271-c26f07ff64f3",
-    "price": 9.99,
+    "price": 99.99,
     "releaseDate": "1992-07-15",
     "description": "Street Fighter 2, the most iconic fighting game of all time, is back on the Nintendo Switch! The newest iteration of SFII in nearly 10 years, Ultra Street Fighter 2 features all of the classic characters, a host of new single player and multiplayer features, as well as two new fighters: Evil Ryu and Violent Ken!"
 }

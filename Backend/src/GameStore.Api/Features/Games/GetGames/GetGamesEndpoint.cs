@@ -7,7 +7,7 @@ public static class GetGamesEndpoint
 {
     public static void MapGetGames(this IEndpointRouteBuilder app, GameStoreData data)
     {
-        app.MapGet("/games", () => data.GetGames()
+        app.MapGet("/", () => data.GetGames()
                                  .Select(game => data.GetGames().Select(game => new GameSummaryDto(game.Id,
                                          game.Name,
                                          game.Genre.Name,
