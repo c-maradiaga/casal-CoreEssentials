@@ -1,9 +1,5 @@
 using GameStore.Api.Data;
 using GameStore.Api.Features.Games;
-using GameStore.Api.Features.Games.CreateGame;
-using GameStore.Api.Features.Games.DeleteGame;
-using GameStore.Api.Features.Games.GetGame;
-using GameStore.Api.Features.Games.UpdateGame;
 using GameStore.Api.Features.Genres.GetGenres;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,12 +9,8 @@ var app = builder.Build();
 GameStoreData data = new GameStoreData();
 
 // Estos Endpoints se han movido a sus respectivas clases
-app.MapGetGames(data);
-app.MapGetGame(data);
-app.MapCreateGame(data);
-app.MapUpdateGame(data);
-app.MapDeleteGame(data);
 
+app.MapGames(data);
 app.MapGenres(data);
 
 
