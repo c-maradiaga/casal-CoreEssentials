@@ -58,7 +58,32 @@ INPUT LAYER: (CreateGameDto) ----> Handler (CreateGameEndpoint) ---> OUTPUT LAYE
 
 Using Route Groups:
 
-    
+**** What is one of the main advantages of using Vertical Slice Architecture over n-tier architecture?
+Vertical Slice Architecture organizes code by features rather than technical concerns. This setup allows all parts 
+of a feature—presentation, business logic, and data access—to exist within a single unit, making it easier to 
+maintain and understand.
+By avoiding layer-based separation, it reduces unnecessary abstractions that can slow down productivity and 
+complicate code navigation, especially for new team members. 
 
+ **** What is a primary benefit of using extension methods in C#?   
+ Extension methods provide a way to "extend" a class by adding new methods without altering the class's 
+ original code or structure. This is especially 
+ useful for built-in or third-party classes that can't be changed directly.
 
+**** What is one of the main benefits of using route groups in ASP.NET Core Minimal APIs?
+Using route groups in ASP.NET Core Minimal APIs helps reduce redundancy by allowing a common route 
+prefix and settings to be applied across multiple endpoints. 
+This makes the code more maintainable and organized, as developers don’t need to repeat the route prefix in each endpoint.
+
+### Dependency Injection:
+
+** Transient lifetime services are create each time they are requested from the service container
+(IServiceProvider)
+
+** Scoped lifetime services are create once por HTTP request and reused within that request.
+
+** Singleton lifetime services are created the first time they are requested and reused across
+  the application lifetime.
+
+  
 
