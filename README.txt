@@ -56,6 +56,7 @@ Vertical Architecture:
 Structuring a slice:
 INPUT LAYER: (CreateGameDto) ----> Handler (CreateGameEndpoint) ---> OUTPUT LAYER (CreateGameResultDto)
 
+Using Route Groups:
 
     
 
