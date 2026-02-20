@@ -16,3 +16,20 @@ aparezca encima de cada endpoint la opcion "Send"
 
 Para la lista originall Lis<Game> se cambio a ConcurrentBag<Game>  para evitar conflictos de cocurrencia cuando la aplicacióon
 se ejecuta varias veces en un mismo momento.
+
+#### RESUMEN:
+An API is a set of definitions and protocols for building and integratin application software. It defines methos and data formats
+for communicating with the service from an application.
+
+REST (Representational State Transfer), on the other hand, is an architectural style that defines a set of constraints for creating
+Web services. RESTful services enable interacting parties to communicate over the Web using the standart HTTP protocol.
+
+The principles of REST guide the design of the architecture for APIs, focusing on stateless communication, resource-base URLs,
+and the use of HTTP methods to perfom operations.
+This relationship alowa APIS to be desgined in a way that is efficient, scalable, and easy to use.
+
+Unlike POST, wich is used to create new resources, PUT is idempotent, meaning that multiple identical request should have the same
+effects as a single request.
+
+### Using Data Transfer Objects
+Para generar un GUID desde la terminal: [guid]::NewGuid()  luego ENTER
