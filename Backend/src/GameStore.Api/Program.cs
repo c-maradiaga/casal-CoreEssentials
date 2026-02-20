@@ -1,7 +1,13 @@
-using System.Collections.Concurrent;
-using GameStore.Api.Models;
+using GameStore.Api.Data;
+using GameStore.Api.Features.Games;
+using GameStore.Api.Features.Genres.GetGenres;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//! Registrar los ervicios en el contenedor de dependencias, Antes del app = builder.Build();
+
+
+
 var app = builder.Build();
 
 const string GetGameEndpointName = "GetGame";

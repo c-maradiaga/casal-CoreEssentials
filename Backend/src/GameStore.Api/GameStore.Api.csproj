@@ -8,5 +8,15 @@
   <ItemGroup>
     <PackageReference Include="MinimalApis.Extensions" Version="0.11.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Features\" />
+    <Folder Include="Features\Games\" />
+    <Folder Include="Features\Games\DeleteGame\" />
+    <Folder Include="Features\Games\GetGames\" />
+    <Folder Include="Features\Games\UpdateGame\" />
+    <Folder Include="Features\Genres\" />
+    <Folder Include="Features\Genres\GetGenres\" />
+  </ItemGroup>
 
 </Project>
