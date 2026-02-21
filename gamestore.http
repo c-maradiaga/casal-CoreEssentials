@@ -1,7 +1,7 @@
 GET http://localhost:5035/games
 
 ###
-GET http://localhost:5035/games/0b4a6e72-8adb-42ff-a3f4-e35b55a1e096
+GET http://localhost:5035/games/dcdd1a5f-73bd-4745-9bb1-6d81c99556ba
 
 ###
 POST http://localhost:5035/games
