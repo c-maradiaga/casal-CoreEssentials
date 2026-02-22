@@ -85,5 +85,11 @@ This makes the code more maintainable and organized, as developers don’t need 
 ** Singleton lifetime services are created the first time they are requested and reused across
   the application lifetime.
 
-  
+
+Dependency Injection allows a class to rely on dependencies without managing their creation or configuration. 
+Instead, dependencies are provided to the class, which simplifies code by removing the need for direct instantiation.
+
+This approach decouples the class from specific implementations, so if a dependency changes, there’s no need to modify the class itself. 
+DI promotes flexibility, testability, and cleaner code structure.
+
 

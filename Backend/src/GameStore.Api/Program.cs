@@ -4,14 +4,16 @@ using GameStore.Api.Features.Genres;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//! Registrar los ervicios en el contenedor de dependencias, Antes del app = builder.Build();
+//! Registrar los Servicios en el contenedor de dependencias, Antes del app = builder.Build();
+//? Los servicios para el contenedor de dependencias se registran depues del var builder y antes
+//? del var app, es decir, antes de builder.Build().
+builder.Services.AddTransient<GameDataLogger>();
+builder.Services.AddScoped<GameStoreData>();
 
 var app = builder.Build();
 
-GameStoreData data = new GameStoreData();
-
-app.MapGames(data);
-app.MapGenres(data);
+app.MapGames();
+app.MapGenres();
 
 app.Run();
 

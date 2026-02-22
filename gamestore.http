@@ -1,14 +1,14 @@
 GET http://localhost:5035/games
 
 ###
-GET http://localhost:5035/games/dcdd1a5f-73bd-4745-9bb1-6d81c99556ba
+GET http://localhost:5035/games/879c318a-c42a-45a2-b564-40302d2422ef
 
 ###
 POST http://localhost:5035/games
 Content-Type: application/json
 
 {
-    "name": "Minecraft",
+    "name": "Minecraft 400",
     "genreId": "b2c3d4e5-f678-90a1-b2c3-d4e5f67890a1",
     "price": 19.99,
     "releaseDate": "2011-11-18",
@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:5035/games/0b4a6e72-8adb-42ff-a3f4-e35b55a1e096
+PUT http://localhost:5035/games/a5048bce-a9cc-472c-91db-561f4e29fcec
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:5035/games/a90f3bca-cb9f-486f-8b44-75e4df7bb03d
+DELETE http://localhost:5035/games/a5048bce-a9cc-472c-91db-561f4e29fcec
 
 ###
 GET http://localhost:5035/genres
