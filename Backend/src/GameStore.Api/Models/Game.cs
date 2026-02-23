@@ -10,10 +10,9 @@ public class Game
     [StringLength(100)]
     public required string Name { get; set; } 
     
-    // [Required]
-    // [StringLength(50)]
-    public required Genre Genre { get; set; }
-    
+    public Genre? Genre { get; set; }
+    public Guid GenreId { get; set; }
+
     [Range(1, 100) ]
     public decimal Price { get; set; }
 

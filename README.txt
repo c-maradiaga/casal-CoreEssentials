@@ -92,4 +92,20 @@ Instead, dependencies are provided to the class, which simplifies code by removi
 This approach decouples the class from specific implementations, so if a dependency changes, there’s no need to modify the class itself. 
 DI promotes flexibility, testability, and cleaner code structure.
 
+Why can't a scoped service be injected into a singleton in ASP.NET Core?
+Scoped services depend on the request lifecycle, which does not exist for singletons.
 
+### INTRODUCTION TO ENTITY FRAMEWORK:
+#### Creando las migraciones:
+
+El Entity Framework se bajo desde www.nuget.org 
+Se busco dotnet-ef y se paso a la pesta;a de Versions para bajar la ultima de la version 8, ya que el proyecto lo\
+tengo en la version .NET 8
+
+Paquetes y tools a instalar : Ambos dentro de la carpeta GameStore.Api
+dotnet tool install --global dotnet-ef --version 8.0.24
+dotnet-ef 
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.24
+
+Creando las migraciones:
+dotnet ef migrations add Inicial --output-dir Data\Migraciones

@@ -1,8 +1,34 @@
 using GameStore.Api.Data;
 using GameStore.Api.Features.Games;
 using GameStore.Api.Features.Genres;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connString = builder.Configuration.GetConnectionString("GameStore");
+
+/* What service lifetime to use for dbContext ?
+- DbContext is designed to be used as a single Unit of Work
+- DbContext created --> Entity changes traked --> save changes --> dispose
+- DB connection are expensive
+- DbContext is no thread safe
+- Increase memory usage due to change tracking
+
+USE: Scope servive lifetime for DbContext
+- Aligining the context lifetime to the lifetime of the request
+- There is only ne thread executing each client reque at a given time
+- Ensure each request gets a separate DbContext instance.
+*/
+
+// Otra forma seria:
+builder.Services.AddDbContext<GameStoreContext>(
+    options => options.UseSqlite(connString)
+
+);
+
+// Formamas simple, sin necesidad de instalar el paquete Microsoft.EntityFrameworkCore.Sqlite, ya que el paquete Microsoft.EntityFrameworkCore incluye un proveedor de SQLite integrado. 
+//builder.Services.AddSqlite<GameStoreContext>(connString);
 
 //! Registrar los Servicios en el contenedor de dependencias, Antes del app = builder.Build();
 //? Los servicios para el contenedor de dependencias se registran depues del var builder y antes
@@ -16,7 +42,4 @@ app.MapGames();
 app.MapGenres();
 
 app.Run();
-
-
-
 
