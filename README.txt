@@ -109,3 +109,67 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.24
 
 Creando las migraciones:
 dotnet ef migrations add Inicial --output-dir Data\Migraciones
+
+Migrating the database when the app starts:
+
+# Genera un script SQL con todos los cambios desde el inicio  
+  
+  dotnet ef migrations script
+
+# Genera un script solo desde una migración específica hasta otra
+# Esto es lo más útil: genera SOLO los cambios pendientes
+
+  dotnet ef migrations script MigracionAnterior MigracionNueva
+
+# El flag --idempotent es muy importante: genera un script que verifica
+# si cada migración ya fue aplicada antes de ejecutarla.
+# Así puedes correrlo múltiples veces sin miedo.
+  
+    dotnet ef migrations script --idempotent --output migration.sql
+
+#### In Entity Framework Core, what is the primary role of the DbContext?
+A DbContext instance in Entity Framework Core represents a session with the database and is used primarily for querying and saving instances of your entities. 
+This makes it a central class in the Entity Framework API, acting as a bridge between your application's domain or entity classes and the database. 
+Its role encompasses the patterns of Unit Of Work and Repository, allowing for a simplified and abstracted approach to handling data access. 
+While it does offer features that could indirectly support tasks like data validation and direct SQL execution, its primary purpose is to manage entity objects during runtime, which includes retrieving and saving data to the database.
+
+#### What is the key benefit of the configuration system in ASP.NET Core?
+The configuration system in ASP.NET Core is designed to be flexible and versatile, allowing for the use of multiple configuration 
+sources like appsettings.json, command line arguments, environment variables, and more. 
+
+A significant benefit of this system is that it abstracts the details of where configuration data comes from. 
+This simplification is achieved through the IConfiguration interface, which presents a unified API for accessing configuration 
+values regardless of their source. 
+
+This means developers can write code that is agnostic of the configuration source, which makes the application 
+more modular and adaptable to changes in its environment.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

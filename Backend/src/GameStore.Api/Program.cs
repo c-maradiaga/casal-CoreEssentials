@@ -41,5 +41,9 @@ var app = builder.Build();
 app.MapGames();
 app.MapGenres();
 
+//? Cuando la aplicacion se inicia, se ejecuta el método MigrateDb para aplicar las migraciones pendientes a la base de datos. 
+//? Esto asegura que la base de datos esté actualizada con el esquema definido en el código antes de que la aplicación comience a manejar solicitudes.    
+app.MigrateDb();
+
 app.Run();
 
