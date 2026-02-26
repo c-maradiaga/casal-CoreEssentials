@@ -33,8 +33,8 @@ builder.Services.AddDbContext<GameStoreContext>(
 //! Registrar los Servicios en el contenedor de dependencias, Antes del app = builder.Build();
 //? Los servicios para el contenedor de dependencias se registran depues del var builder y antes
 //? del var app, es decir, antes de builder.Build().
-builder.Services.AddTransient<GameDataLogger>();
-builder.Services.AddScoped<GameStoreData>();
+//! builder.Services.AddTransient<GameDataLogger>(); ya no se usa el datalogger.
+//! builder.Services.AddScoped<GameStoreData>(); se comentó porque ya no se usa la lista GameStoreData, sino que se usa el dbContext
 
 var app = builder.Build();
 

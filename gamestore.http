@@ -1,30 +1,30 @@
 GET http://localhost:5035/games
 
 ###
-GET http://localhost:5035/games/879c318a-c42a-45a2-b564-40302d2422ef
+GET http://localhost:5035/games/e339aff9-7fd4-4639-93ae-f19031bd6d30
 
 ###
 POST http://localhost:5035/games
 Content-Type: application/json
 
 {
-    "name": "Minecraft 400",
-    "genreId": "36A80D10-0194-4CB7-A6D3-5DC0927E4E2B",
-    "price": 19.99,
-    "releaseDate": "2011-11-18",
-    "description": "Juengo en Febrero Otro Juego!"
+    "name": "Minecraft 500",
+    "genreId": "8B98431D-6518-40A4-8329-0241A63660CE",
+    "price": 8.95,
+    "releaseDate": "2025-10-18",
+    "description": "Juego creado en Febrero-2026"
 }
 
 ###
-PUT http://localhost:5035/games/a5048bce-a9cc-472c-91db-561f4e29fcec
+PUT http://localhost:5035/games/22E1E8D4-8B96-494A-B11E-6AFEE9CF21DA
 Content-Type: application/json
 
 {
     "name": "Stree Fighter II Turbo",
-    "genreId": "4e179397-c3f1-45ec-a271-c26f07ff64f3",
-    "price": 99.99,
+    "genreId": "AC3DA7B6-1656-4C1D-B0DB-D5B0BE51450F",
+    "price": 88.50,
     "releaseDate": "1992-07-15",
-    "description": "Street Fighter 2, the most iconic fighting game of all time, is back on the Nintendo Switch! The newest iteration of SFII in nearly 10 years, Ultra Street Fighter 2 features all of the classic characters, a host of new single player and multiplayer features, as well as two new fighters: Evil Ryu and Violent Ken!"
+    "description": "Lo modifique Yo. Street Fighter 2, the most iconic fighting game of all time, is back on the Nintendo Switch! The newest iteration of SFII in nearly 10 years, Ultra Street Fighter 2 features all of the classic characters, a host of new single player and multiplayer features, as well as two new fighters: Evil Ryu and Violent Ken!"
 }
 
 ###
