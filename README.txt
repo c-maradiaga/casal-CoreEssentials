@@ -146,10 +146,25 @@ more modular and adaptable to changes in its environment.
 
 #### Creating new database records:
 
+#### ** Questions:
+- 1.When using Entity Framework Core, why is it necessary to call SaveChanges after modifying an entity?
+Entity Framework Core uses change tracking to monitor modifications to entities in memory, but these tracked
+changes are not applied to the database until SaveChanges is explicitly called. 
+This allows developers to group multiple changes and save them in a single transaction.
 
+ - 2. In Entity Framework Core, what is the purpose of the ExecuteDelete method?
+To delete a set of records from the database directly without loading them into memory.
+The ExecuteDelete method in EF Core allows for a bulk deletion of records directly at the database level without
+loading each record into memory, which improves performance when deleting multiple records at once. 
+This method is particularly efficient for scenarios where you want to delete a filtered set of data in one call.
+Unlike other methods that require tracking entities, ExecuteDelete is designed to execute directly in the database,
+bypassing EF Core’s change tracker, making it an ideal choice for bulk deletions.
 
-
-
+- 3.
+What is the primary purpose of the AsNoTracking() method in Entity Framework Core?
+The AsNoTracking() method is used to retrieve entities from the database without adding them to the change tracker. 
+This improves query performance because EF Core skips tracking information. 
+This method is particularly useful in read-only scenarios where you don’t need to modify the data.
 
 
 
